@@ -1,0 +1,15 @@
+TITLE PROGRAM TO SET CURSOR
+CODE SEGMENT
+        ASSUME CS:CODE
+START:  MOV AH,02H
+        MOV BH,00H
+        MOV DH,05
+        MOV DL,12
+        INT 10H
+        MOV AX,4C00H
+        INT 21H
+CODE ENDS
+        END START
+
+
+

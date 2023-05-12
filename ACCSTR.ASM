@@ -1,0 +1,21 @@
+TITLE PROGRAM TO ACCEPT STRING AND COUNT THE LENGTH OF IT
+DATA SEGMENT
+        STRLB   LABEL BYTE
+        STRLG   DB      20
+        STRAG   DB      ?
+        STR1    DB  20 DUP(' ')
+DATA ENDS
+CODE SEGMENT
+        ASSUME CS:CODE,DS:DATA
+START:  MOV AX,DATA
+        MOV DS,AX
+        MOV AX,00H
+        MOV AH,0AH
+        LEA DX,STRLB
+        INT 21H
+        MOV CX,00H
+        MOV CH,STRAG
+        MOV AX,4C00H
+        INT 21H
+CODE ENDS
+        END START
